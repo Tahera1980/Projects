@@ -1,0 +1,25 @@
+def swap(s,n):
+    if n == 0:
+        return s
+    res = ""
+    new_bin = ""
+    bn = bin(n).replace("0b", "")
+    while len(new_bin) < len(s):
+        new_bin += bn
+    print(new_bin)
+    
+    
+    for i,j in zip(s,new_bin):
+        if i.isalpha():
+
+            if j == "1":
+                x = i.swapcase()
+            else:
+                x = i
+            res += x
+        else: 
+            res += i
+
+
+
+    return res
