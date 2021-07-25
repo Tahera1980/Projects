@@ -1,0 +1,22 @@
+Closures
+
+var budgetController = (function() {
+    var x = 5;
+    var add = function(a){
+        return a + x;
+    }
+    return {
+        publicTest : function(b) {
+            return add(b);
+        }   
+    }
+})();
+
+var UIController = (function(){
+
+})();
+
+var Controller = (function(budgetcntrl, UIcntrl) {
+    z = budgetcntrl.publicTest(25);
+    console.log(z)
+})(budgetController, UIController)
